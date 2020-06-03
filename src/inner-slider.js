@@ -125,7 +125,7 @@ export class InnerSlider extends React.Component {
     this.ro.disconnect();
   };
   UNSAFE_componentWillReceiveProps = nextProps => {
-    const { autoplay } = this.props;
+    const { autoplay, autoplaySpeed } = this.props;
     let spec = {
       listRef: this.list,
       trackRef: this.track,
@@ -158,7 +158,10 @@ export class InnerSlider extends React.Component {
           currentSlide: this.state.currentSlide
         });
       }
-      if (autoplay === nextProps.autoplay) {
+      if (
+        autoplay === nextProps.autoplay &&
+        autoplaySpeed === nextProps.autoplaySpeed
+      ) {
         return;
       }
       if (nextProps.autoplay) {
