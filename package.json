@@ -52,7 +52,7 @@
     "babel-preset-airbnb": "^5.0.0",
     "css-loader": "^5.0.0",
     "deepmerge": "^1.1.0",
-    "del": "^2.2.2",
+    "del": "^6.0.0",
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.0",
     "es5-shim": "^4.5.9",
