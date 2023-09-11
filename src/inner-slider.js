@@ -751,6 +751,7 @@ export class InnerSlider extends React.Component {
 
     if (this.props.unslick) {
       listProps = { className: "slick-list" };
+      trackProps.trackStyle = null;
       innerSliderProps = { className, style: this.props.style };
     }
     return (
