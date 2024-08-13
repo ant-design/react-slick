@@ -1,4 +1,4 @@
-import "@testing-library/jest-dom/extend-expect";
+import "@testing-library/jest-dom";
 import "regenerator-runtime/runtime";
 
 //Fix for "matchMedia not present, legacy browsers require a polyfill jest" error
