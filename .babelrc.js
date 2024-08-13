@@ -1,34 +1,31 @@
 const useESModules = !!process.env.ESMODULES;
 
-if (process.env.NODE_ENV === 'test') {
+if (process.env.NODE_ENV === "test") {
   module.exports = {
-    presets: [
-      '@babel/preset-env',
-      "@babel/preset-react"
-    ],
+    presets: ["@babel/preset-env", "@babel/preset-react"],
     plugins: [
       "@babel/plugin-proposal-class-properties",
-      "@babel/plugin-transform-runtime",
+      "@babel/plugin-transform-runtime"
     ]
   };
 } else {
   module.exports = {
-    "presets": [
+    presets: [
       [
-        '@babel/preset-env',
+        "@babel/preset-env",
         {
-          modules: useESModules ? false : 'auto',
+          modules: useESModules ? false : "auto"
         }
       ],
       "@babel/preset-react"
     ],
-    "plugins": [
+    plugins: [
       "@babel/plugin-proposal-class-properties",
       [
         "@babel/plugin-transform-runtime",
         {
           useESModules,
-          version: "^7.10.4",
+          version: "^7.20.7"
         }
       ]
     ]
