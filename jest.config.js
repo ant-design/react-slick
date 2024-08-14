@@ -2,7 +2,7 @@ module.exports = {
   collectCoverage: true,
   coverageReporters: ['text', 'cobertura'],
   collectCoverageFrom: [
-    'src/**/*.{ts,js}',
+    'src/**/*',
   ],
   testEnvironment: "jsdom",
   setupFilesAfterEnv: ["<rootDir>/test-setup.js"],
