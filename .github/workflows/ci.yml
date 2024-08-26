@@ -1,19 +1,6 @@
-name: CI
-
+name: ✅ test
 on: [push, pull_request]
-
 jobs:
   test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - run: npm install
-      - run: npm run lint
-      - run: npm run build
-      - run: npm test -- --coverage
-      - uses: codecov/codecov-action@v4
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
+    uses: react-component/rc-test/.github/workflows/test.yml@main
+    secrets: inherit
