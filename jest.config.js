@@ -6,7 +6,7 @@ module.exports = {
   ],
   testEnvironment: "jsdom",
   setupFilesAfterEnv: ["<rootDir>/test-setup.js"],
-  testPathIgnorePatterns: ["/node_modules/", "e2e-tests"],
+  testPathIgnorePatterns: ["/node_modules/", "playwright-tests"],
   moduleNameMapper: {
     "@ant-design/react-slick": "<rootDir>/src/index.js"
   }
