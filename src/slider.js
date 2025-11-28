@@ -73,7 +73,7 @@ export default class Slider extends React.Component {
   }
 
   componentWillUnmount() {
-    this._responsiveMediaHandlers.forEach(function(obj) {
+    this._responsiveMediaHandlers.forEach(function (obj) {
       obj.mql.removeListener(obj.listener);
     });
   }
