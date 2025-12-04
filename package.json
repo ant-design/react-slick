@@ -53,6 +53,7 @@
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
     "@playwright/experimental-ct-react": "^1.49.1",
+    "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^16.1.0",
     "@testing-library/user-event": "^14.3.0",
@@ -100,9 +101,8 @@
     "why-did-you-update": "^0.1.1"
   },
   "dependencies": {
-    "@babel/runtime": "^7.20.7",
+    "@babel/runtime": "^7.28.4",
     "clsx": "^2.1.1",
-    "@testing-library/dom": "^10.4.1",
     "json2mq": "^0.2.0",
     "throttle-debounce": "^5.0.0"
   },
