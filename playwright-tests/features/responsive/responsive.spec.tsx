@@ -3,7 +3,7 @@ import Responsive from "./responsive.story";
 
 test.use({ viewport: { width: 1200, height: 500 } });
 
-async function activeSlidesCount(component) {
+async function activeSlidesCount(component: any) {
   return await component.locator(".slick-slide.slick-active").count();
 }
 

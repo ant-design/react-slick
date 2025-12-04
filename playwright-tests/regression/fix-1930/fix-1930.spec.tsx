@@ -12,7 +12,7 @@ test("height check in vertical mode when slides < slidesToShow and finite", asyn
 
   const track = component.locator(".slick-track").first();
   const box = await track.boundingBox();
-  await expect(box.height).toEqual(200);
+  await expect(box?.height).toEqual(200);
 });
 
 test("height check in vertical mode when slides < slidesToShow and infinite", async ({
@@ -22,5 +22,5 @@ test("height check in vertical mode when slides < slidesToShow and infinite", as
 
   const track = component.locator(".slick-track").first();
   const box = await track.boundingBox();
-  await expect(box.height).toEqual(200);
+  await expect(box?.height).toEqual(200);
 });

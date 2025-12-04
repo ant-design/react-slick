@@ -1,3 +1,4 @@
+// @ts-ignore
 import Slider from "../../../src-jsx";
 import React from "react";
 
