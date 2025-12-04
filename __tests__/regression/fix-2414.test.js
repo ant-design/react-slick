@@ -29,32 +29,32 @@ function SliderWithUnslick() {
   return <GenericSliderComponent slidesCount={2} settings={settings} />;
 }
 
-describe("Slider with one slide", function() {
-  it("should have 1 active slide", function() {
+describe("Slider with one slide", function () {
+  it("should have 1 active slide", function () {
     const { container } = render(<SliderWithOneSlide />);
     expect(getActiveSlidesCount(container)).toEqual(1);
   });
-  it("should not have any clones", function() {
+  it("should not have any clones", function () {
     const { container } = render(<SliderWithOneSlide />);
     expect(getClonesCount(container)).toEqual(0);
   });
-  it("should no have dots and arrows", function() {
+  it("should no have dots and arrows", function () {
     const { container } = render(<SliderWithOneSlide />);
     expect(hasArrows(container)).toEqual(false);
     expect(hasDots(container)).toEqual(false);
   });
 });
 
-describe("Slider with unslick=true", function() {
-  it("should have one active slide", function() {
+describe("Slider with unslick=true", function () {
+  it("should have one active slide", function () {
     const { container } = render(<SliderWithUnslick />);
     expect(getActiveSlidesCount(container)).toEqual(1);
   });
-  it("should not have any clones", function() {
+  it("should not have any clones", function () {
     const { container } = render(<SliderWithUnslick />);
     expect(getClonesCount(container)).toEqual(0);
   });
-  it("should no have dots and arrows", function() {
+  it("should no have dots and arrows", function () {
     const { container } = render(<SliderWithUnslick />);
     expect(hasArrows(container)).toEqual(false);
     expect(hasDots(container)).toEqual(false);

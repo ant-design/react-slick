@@ -19,8 +19,8 @@ import {
 } from "../../test-utils";
 import MultipleItems from "../MultipleItems";
 
-describe("Multiple Items", function() {
-  it("should have 9 actual slides and (3(pre) + 3(post)) clone slides", function() {
+describe("Multiple Items", function () {
+  it("should have 9 actual slides and (3(pre) + 3(post)) clone slides", function () {
     const { container } = render(<MultipleItems />);
     expect(getSlidesCount(container)).toEqual(15);
     expect(getClonesCount(container)).toEqual(6);

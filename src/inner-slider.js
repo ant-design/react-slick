@@ -3,7 +3,7 @@
 import React from "react";
 import initialState from "./initial-state";
 import { debounce } from "throttle-debounce";
-import classnames from "classnames";
+import { clsx } from "clsx";
 import {
   getOnDemandLazySlides,
   extractObject,
@@ -25,7 +25,6 @@ import {
 import { Track } from "./track";
 import { Dots } from "./dots";
 import { PrevArrow, NextArrow } from "./arrows";
-import ResizeObserver from "resize-observer-polyfill";
 
 export class InnerSlider extends React.Component {
   constructor(props) {
@@ -78,17 +77,19 @@ export class InnerSlider extends React.Component {
     if (this.props.lazyLoad === "progressive") {
       this.lazyLoadTimer = setInterval(this.progressiveLazyLoad, 1000);
     }
-    this.ro = new ResizeObserver(() => {
-      if (this.state.animating) {
-        this.onWindowResized(false); // don't set trackStyle hence don't break animation
-        this.callbackTimers.push(
-          setTimeout(() => this.onWindowResized(), this.props.speed)
-        );
-      } else {
-        this.onWindowResized();
-      }
-    });
-    this.ro.observe(this.list);
+    if (typeof ResizeObserver !== "undefined") {
+      this.ro = new ResizeObserver(() => {
+        if (this.state.animating) {
+          this.onWindowResized(false); // don't set trackStyle hence don't break animation
+          this.callbackTimers.push(
+            setTimeout(() => this.onWindowResized(), this.props.speed)
+          );
+        } else {
+          this.onWindowResized();
+        }
+      });
+      this.ro.observe(this.list);
+    }
     document.querySelectorAll &&
       Array.prototype.forEach.call(
         document.querySelectorAll(".slick-slide"),
@@ -122,7 +123,7 @@ export class InnerSlider extends React.Component {
     if (this.autoplayTimer) {
       clearInterval(this.autoplayTimer);
     }
-    this.ro.disconnect();
+    this.ro?.disconnect();
   };
 
   didPropsChange(prevProps) {
@@ -619,7 +620,7 @@ export class InnerSlider extends React.Component {
     this.autoPlay("blur");
 
   render = () => {
-    var className = classnames("slick-slider", this.props.className, {
+    var className = clsx("slick-slider", this.props.className, {
       "slick-vertical": this.props.vertical,
       "slick-initialized": true
     });

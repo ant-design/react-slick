@@ -30,7 +30,7 @@ gulp.task("copy", function () {
     .pipe(gulp.dest("./build"));
 });
 
-gulp.task("prepare-playwright", function() {
+gulp.task("prepare-playwright", function () {
   // Copy files to src-jsx directory with jsx extension
   return gulp
     .src("./src/**/*.js")

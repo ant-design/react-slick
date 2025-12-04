@@ -31,12 +31,12 @@ function MultipleItems() {
   return <GenericSliderComponent slidesCount={9} settings={settings} />;
 }
 
-describe("Multiple Items with slidesToShow = slides count in infinite mode", function() {
-  it("should have 9 active slides", function() {
+describe("Multiple Items with slidesToShow = slides count in infinite mode", function () {
+  it("should have 9 active slides", function () {
     const { container } = render(<MultipleItems />);
     expect(getActiveSlidesCount(container)).toEqual(9);
   });
-  it("should show first 9 slides", function() {
+  it("should show first 9 slides", function () {
     const { container } = render(<MultipleItems />);
     //expect(getActiveButton(container)).toEqual(["1"]);
     expect(getActiveSlidesText(container)).toEqual([

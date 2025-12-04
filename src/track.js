@@ -1,7 +1,7 @@
 "use strict";
 
 import React from "react";
-import classnames from "classnames";
+import { clsx } from "clsx";
 import {
   lazyStartIndex,
   lazyEndIndex,
@@ -123,7 +123,7 @@ const renderSlides = (spec) => {
       React.cloneElement(child, {
         key: "original" + getKey(child, index),
         "data-index": index,
-        className: classnames(slideClasses, slideClass),
+        className: clsx(slideClasses, slideClass),
         tabIndex: "-1",
         "aria-hidden": !slideClasses["slick-active"],
         style: { outline: "none", ...(child.props.style || {}), ...childStyle },
@@ -155,7 +155,7 @@ const renderSlides = (spec) => {
             key: "precloned" + getKey(child, key),
             "data-index": key,
             tabIndex: "-1",
-            className: classnames(slideClasses, slideClass),
+            className: clsx(slideClasses, slideClass),
             "aria-hidden": !slideClasses["slick-active"],
             style: { ...(child.props.style || {}), ...childStyle },
             onClick: (e) => {
@@ -178,10 +178,10 @@ const renderSlides = (spec) => {
             key: "postcloned" + getKey(child, key),
             "data-index": key,
             tabIndex: "-1",
-            className: classnames(slideClasses, slideClass),
+            className: clsx(slideClasses, slideClass),
             "aria-hidden": !slideClasses["slick-active"],
             style: { ...(child.props.style || {}), ...childStyle },
-            onClick: e => {
+            onClick: (e) => {
               child.props && child.props.onClick && child.props.onClick(e);
               if (spec.focusOnSelect) {
                 spec.focusOnSelect(childOnClickOptions);
