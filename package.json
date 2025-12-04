@@ -18,7 +18,7 @@
     "es": "ESMODULES=true babel ./src --out-dir ./es",
     "lib": "babel ./src --out-dir ./lib",
     "compile": "NODE_OPTIONS=--openssl-legacy-provider npm run lib && NODE_OPTIONS=--openssl-legacy-provider npm run es && NODE_OPTIONS=--openssl-legacy-provider gulp dist",
-    "prepublishOnly": "npm run build && np --no-cleanup --no-publish",
+    "prepublishOnly": "npm run compile && np --no-cleanup --no-publish",
     "lint": "eslint src",
     "gen": "node docs/scripts/generateExampleConfigs.js && node docs/scripts/generateExamples.js && xdg-open docs/jquery.html",
     "precommit": "lint-staged",
