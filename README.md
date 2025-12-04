@@ -1,5 +1,7 @@
 ### @ant-design/react-slick
 
+---
+
 [![NPM version][npm-image]][npm-url]
 [![npm download][download-image]][download-url]
 [![build status][github-actions-image]][github-actions-url]
@@ -8,16 +10,10 @@
 
 [npm-image]: http://img.shields.io/npm/v/@ant-design/react-slick.svg?style=flat-square
 [npm-url]: http://npmjs.org/package/@ant-design/react-slick
-[travis-image]: https://img.shields.io/travis/ant-design/react-slick/master?style=flat-square
-[travis-url]: https://travis-ci.com/ant-design/react-slick
 [github-actions-image]: https://github.com/ant-design/react-slick/actions/workflows/ci.yml/badge.svg
 [github-actions-url]: https://github.com/ant-design/react-slick/actions/workflows/ci.yml
 [codecov-image]: https://img.shields.io/codecov/c/github/ant-design/react-slick/master.svg?style=flat-square
 [codecov-url]: https://app.codecov.io/gh/ant-design/react-slick
-[david-url]: https://david-dm.org/ant-design/react-slick
-[david-image]: https://david-dm.org/ant-design/react-slick/status.svg?style=flat-square
-[david-dev-url]: https://david-dm.org/ant-design/react-slick?type=dev
-[david-dev-image]: https://david-dm.org/ant-design/react-slick/dev-status.svg?style=flat-square
 [download-image]: https://img.shields.io/npm/dm/@ant-design/react-slick.svg?style=flat-square
 [download-url]: https://npmjs.org/package/@ant-design/react-slick
 [bundlephobia-url]: https://bundlephobia.com/package/@ant-design/react-slick
