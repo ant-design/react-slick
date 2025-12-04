@@ -20,7 +20,10 @@ docs/fonts/
 docs/ajax-loader.gif
 package-lock.json
 .DS_Store
-
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+src-jsx
 bun.lockb
-
 coverage
