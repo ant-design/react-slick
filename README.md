@@ -10,8 +10,8 @@
 [npm-url]: http://npmjs.org/package/@ant-design/react-slick
 [travis-image]: https://img.shields.io/travis/ant-design/react-slick/master?style=flat-square
 [travis-url]: https://travis-ci.com/ant-design/react-slick
-[github-actions-image]: https://github.com/ant-design/react-slick/workflows/CI/badge.svg
-[github-actions-url]: https://github.com/ant-design/react-slick/actions
+[github-actions-image]: https://github.com/ant-design/react-slick/actions/workflows/ci.yml/badge.svg
+[github-actions-url]: https://github.com/ant-design/react-slick/actions/workflows/ci.yml
 [codecov-image]: https://img.shields.io/codecov/c/github/ant-design/react-slick/master.svg?style=flat-square
 [codecov-url]: https://app.codecov.io/gh/ant-design/react-slick
 [david-url]: https://david-dm.org/ant-design/react-slick
