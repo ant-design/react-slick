@@ -1,6 +1,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import Slider from "../src/slider";
+import { InnerSlider } from "../src/inner-slider";
+import defaultProps from "../src/default-props";
 import { createInnerSliderWrapper } from "./testUtils";
 
 const slides = (container) => Array.from(container.querySelectorAll(".slick-slide"));
@@ -37,14 +38,14 @@ describe("hidden slides", () => {
 
   test("leave the visible slides with the inert of their own element", () => {
     const { container } = render(
-      <Slider speed={0} infinite={false}>
+      <InnerSlider {...defaultProps} speed={0} infinite={false}>
         <div inert>
           <button type="button">first</button>
         </div>
         <div>
           <button type="button">second</button>
         </div>
-      </Slider>
+      </InnerSlider>
     );
 
     const [first, second] = slides(container);
