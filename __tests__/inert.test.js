@@ -1,4 +1,6 @@
+import React from "react";
 import { render } from "@testing-library/react";
+import Slider from "../src/slider";
 import { createInnerSliderWrapper } from "./testUtils";
 
 const slides = (container) => Array.from(container.querySelectorAll(".slick-slide"));
@@ -31,5 +33,23 @@ describe("hidden slides", () => {
     });
 
     expect(container.querySelectorAll(".slick-slide:not([inert])")).toHaveLength(1);
+  });
+
+  test("leave the visible slides with the inert of their own element", () => {
+    const { container } = render(
+      <Slider speed={0} infinite={false}>
+        <div inert>
+          <button type="button">first</button>
+        </div>
+        <div>
+          <button type="button">second</button>
+        </div>
+      </Slider>
+    );
+
+    const [first, second] = slides(container);
+    expect(first.getAttribute("aria-hidden")).toBe("false");
+    expect(first.hasAttribute("inert")).toBe(true);
+    expect(second.hasAttribute("inert")).toBe(true);
   });
 });

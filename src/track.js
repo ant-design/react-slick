@@ -15,7 +15,8 @@ const INERT = parseInt(React.version, 10) >= 19 ? true : "";
 // hidden slides leave the accessibility tree (aria-hidden) and the tab order (inert)
 const getVisibilityProps = (slideClasses) => {
   const hidden = !slideClasses["slick-active"];
-  return { "aria-hidden": hidden, inert: hidden ? INERT : undefined };
+  // a visible slide keeps the `inert` its own element may carry
+  return hidden ? { "aria-hidden": true, inert: INERT } : { "aria-hidden": false };
 };
 
 // given specifications/props for a slide, fetch all the classes that need to be applied to the slide
