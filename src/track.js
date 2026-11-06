@@ -9,6 +9,15 @@ import {
   getPostClones
 } from "./utils/innerSliderUtils";
 
+// React 19 reads `inert` as a boolean, earlier versions only forward strings
+const INERT = parseInt(React.version, 10) >= 19 ? true : "";
+
+// hidden slides leave the accessibility tree (aria-hidden) and the tab order (inert)
+const getVisibilityProps = (slideClasses) => {
+  const hidden = !slideClasses["slick-active"];
+  return { "aria-hidden": hidden, inert: hidden ? INERT : undefined };
+};
+
 // given specifications/props for a slide, fetch all the classes that need to be applied to the slide
 const getSlideClasses = (spec) => {
   let slickActive, slickCenter, slickCloned;
@@ -125,7 +134,7 @@ const renderSlides = (spec) => {
         "data-index": index,
         className: clsx(slideClasses, slideClass),
         tabIndex: "-1",
-        "aria-hidden": !slideClasses["slick-active"],
+        ...getVisibilityProps(slideClasses),
         style: { outline: "none", ...(child.props.style || {}), ...childStyle },
         onClick: (e) => {
           child.props && child.props.onClick && child.props.onClick(e);
@@ -156,7 +165,7 @@ const renderSlides = (spec) => {
             "data-index": key,
             tabIndex: "-1",
             className: clsx(slideClasses, slideClass),
-            "aria-hidden": !slideClasses["slick-active"],
+            ...getVisibilityProps(slideClasses),
             style: { ...(child.props.style || {}), ...childStyle },
             onClick: (e) => {
               child.props && child.props.onClick && child.props.onClick(e);
@@ -179,7 +188,7 @@ const renderSlides = (spec) => {
             "data-index": key,
             tabIndex: "-1",
             className: clsx(slideClasses, slideClass),
-            "aria-hidden": !slideClasses["slick-active"],
+            ...getVisibilityProps(slideClasses),
             style: { ...(child.props.style || {}), ...childStyle },
             onClick: (e) => {
               child.props && child.props.onClick && child.props.onClick(e);
